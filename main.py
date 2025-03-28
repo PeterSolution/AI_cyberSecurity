@@ -1,4 +1,6 @@
 import torch
+import torch.nn as nn
+import torch.optim as optim
 import numpy as np
 import pandas as pd
 import psutil
@@ -6,6 +8,7 @@ import csv
 import os
 from datetime import datetime, timedelta
 import threading
+from NeuralNetwork import NeuralNetwork
 
 # def get_active_ips():
 #     connections = psutil.net_connections(kind='inet')
@@ -67,6 +70,7 @@ def get_incoming_connections():
             for ip, count in entries_to_save:
                 current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 writer.writerow([current_time, ip, count])
+
 
 
 
